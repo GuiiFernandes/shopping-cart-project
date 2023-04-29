@@ -118,9 +118,9 @@ const addProduct = async (elem) => {
     const historyNav = JSON.parse(localStorage.getItem('preferences'));
     let query;
     if (historyNav) {
-      query = Object.entries(historyNav)
+      [query] = Object.entries(historyNav)
         .reduce((biggest, [key, value]) => (value > biggest[1]
-          ? [key, value] : biggest), ['', 0])[0];
+          ? [key, value] : biggest), ['', 0]);
     } else {
       const idCategories = document.getElementsByClassName('id-category');
       const randomIndex = randomCategory(idCategories.length - 1);
@@ -154,6 +154,10 @@ document.addEventListener('click', async (event) => {
     await searchProducts(elem.lastChild.innerText, stringsSearch[0]);
     addInPreferences(elem.lastChild.innerText);
     containerCat.style.display = 'none';
+    const condition = containerCat.style.display === 'none';
+    if (window.innerWidth > widthWinCart) {
+      elProducts.style.marginLeft = (!condition ? '0' : `${containerCat.clientWidth}px`);
+    }
   } else {
     totalUpdate();
     countCart();
