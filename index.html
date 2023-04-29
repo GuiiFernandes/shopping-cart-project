@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Carrinho de Compras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="src/main.js" type="module" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-title">
+        <img src="./src/imgs/logo.png" class="logo" alt="logo carrinho de compras">
+      </div>
+      <form class="input-group">
+        <label class="input-group-text" id="input-label" for="search"><img src="./src/imgs/icons8-pesquisar-64.svg" alt="search"></label>
+        <input type="text" id="search" class="form-control" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="search">
+      </form>
+      <div class="container-cartTitle">
+        <i class="material-icons" style="font-size:35px;color: rgb(65, 25, 127);">shopping_cart</i>
+        <span class="cart__title">Meu carrinho</span>
+        <span class="count-itens" style="display: none;"></span>
+      </div>
+    </header>
+    <section class="container-main">
+      <section id="container-categories" style="display: none">
+        <h2>Categorias</h2>
+        <ol id="list-categories"></ol>
+      </section>
+      <section class="products"></section>
+      <section class="cart" style="display: none;">
+        <ol class="cart__products"></ol>
+        <p class="price">Subtotal <span>R$<span class="total-price">0</span></span></p>
+        <section class="cep">
+          <input type="text" class="cep-input" placeholder="Digite seu CEP">
+          <button class="cep-button cart-button">Buscar CEP</button>
+        </section>
+        <span class="cart__address"></span>
+      </section>
+    </section>
+    <footer>
+      <p>&copy; 2023, Guilherme Fernandes</p>
+      <a href="https://github.com/GuiiFernandes" target="_blank" rel="noopener noreferrer"><img  src="./src/imgs/github.svg" alt="github-logo"></img></a>
+      <a href="https://www.linkedin.com/in/guifernandesdev/" target="_blank" rel="noopener noreferrer"><img src="./src/imgs/linkedin.svg" alt="linkedin-logo"></img></a>
+    </footer>
+  </body>
+</html>
